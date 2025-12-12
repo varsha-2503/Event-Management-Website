@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FLUXORA EVENTS - Contact / Sign Up</title>
+    <link rel="stylesheet" href="styles.css">
+    <script language="Javascript">
+    function validateForm() {
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let phone = document.getElementById("phone").value.trim();
+    let message = document.getElementById("message").value.trim();
+    if (name === "" || name.length < 3) {
+        alert("Please enter a valid name (at least 3 characters)!");
+        return false;
+    }
+    if (email === "" || email.indexOf("@") === -1 || email.indexOf(".") === -1) {
+        alert("Please enter a valid email!");
+        return false;
+    }
+    if (phone === "" || phone.length !== 10 || isNaN(phone)) {
+        alert("Please enter a 10-digit phone number!");
+        return false;
+    }
+    if (message === "" || message.length < 5) {
+        alert("Please enter a message (at least 5 characters)!");
+        return false;
+    }
+    alert("Thank you! Your details have been submitted.");
+    return true;
+    }
+    </script>
+</head>
+<body class="sign-up-bg">
+    <header>
+        <h1 style="font-size: 26px;font-family:'Times New Roman';color: white;">FLUXORA EVENTS</h1>
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="event.html">Events</a>
+            <a href="testimonials.html">Testimonials</a>
+        </nav>
+    </header>
+    <form class="sign-up" onsubmit="return validateForm()">
+        <h2 style="font-size: 27px;font-family: 'Segoe UI';">GET IN TOUCH</h2>
+        <label>Name</label><br>
+        <input type="text" id="name" placeholder="Enter your name"><br><br>
+        <label>Email</label><br>
+        <input type="email" id="email" placeholder="Enter your email"><br><br>
+        <label>Mobile Number</label><br>
+        <input type="tel" id="phone" placeholder="Enter your mobile number"><br><br>
+        <label>Message / Event Requirements</label><br>
+        <textarea id="message" placeholder="Describe your event..." rows="4"></textarea><br><br>
+        <button type="submit">SUBMIT</button>
+    </form>
+</body>
+</html>
